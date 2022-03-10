@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <div id="app"></div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    inputValue: '',
+                    imageList: [{
+                        title: '头像1',
+                        src: './img/01.jpeg',
+                    }, {
+                        title: '头像2',
+                        src: './img/02.jpeg',
+                    }, {
+                        title: '头像3',
+                        src: './img/03.jpeg',
+                    }, ],
+                }
+            },
+            methods: {
+                handleAdd() {
+                    this.list.push(this.inputValue)
+                    this.inputValue = ''
+                },
+            },
+            template: `
+        <div>
+            <url>
+                <image-card v-for="(item,index) of imageList" v-bind:src="item.src" v-bind:title="item.title"/>   
+                <todo-item v-for="(item,index) of list" v-bind:content="item" v-bind:index="index"/>
+            </url>
+        </div>
+        `,
+        })
+
+        app.component('todo-item', {
+            props: ['content', 'index'],
+            template: `<li>{{ index }}----{{ content }}</li>`,
+        })
+
+        app.component('image-card', {
+            props: ['src', 'title'],
+            template: ` <img :src="src" style="height:100px; width=100px;"/> 
+                        <h2>{{ title }}</h2>
+            `,
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
