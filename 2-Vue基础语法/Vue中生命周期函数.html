@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue中生命周期函数</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: "hello world"
+                };
+            },
+        
+            beforeCreate() {
+                console.log('beforeCreate', this.message);
+            },
+            created() {
+                console.log('created', document.getElementById('root').innerHTML, this.message);
+            },
+            beforeMount() {
+                console.log('beforeMount', document.getElementById('root').innerHTML, this.message);
+            },
+            mounted() {
+                console.log(document.getElementById('root').innerHTML, 'mounted');
+            },
+            beforeUpdate() {
+                console.log(document.getElementById('root').innerHTML, 'beforeUpdate');
+            },
+            updated() {
+                console.log(document.getElementById('root').innerHTML, 'updated');
+            },
+            beforeUnmount() {
+                console.log(document.getElementById('root').innerHTML, 'beforeUnmount');
+            },
+            unmounted() {
+                console.log(document.getElementById('root').innerHTML, 'unmounted');
+            },
+            template: `<h2>{{message}}</h2>`
+        });
+        const vm = app.mount('#root');
+    </script>
+</body>
+
+</html>

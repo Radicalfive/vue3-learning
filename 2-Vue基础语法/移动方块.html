@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动的方块</title>
+    <style>
+        #app {
+            width: 700px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: rgb(123, 211, 211);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div id="app" tabindex="1" @keydown="keydown($event)">
+            <div id="box"></div>
+        </div> 
+    </div>  
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+         data() {
+             return {
+                 left: 0,
+                 top1:0,
+                 deg:0
+             }
+         },
+         methods:{
+             keydown(e){
+                 console.log(e.keyCode)
+                 switch(e.keyCode){
+                     case 37:
+                     this.left -= 50
+                     break;
+                     case 38:
+                     this.top1 -= 50
+                     break;
+                     case 39:
+                     this.left += 50
+                     break;
+                     case 40:
+                     this.top1 += 50
+                     break;
+                     case 32:
+                     this.deg += 90
+                     break;
+                 }
+                 let box = document.getElementById('box')
+                 //console.log(box)
+                 box.style.left = this.left + 'px'
+                 box.style.top = this.top1 + 'px'
+                 console.log(this.deg)
+                 box.style.transform = `rotate(${this.deg}deg)`
+             }
+         }
+        });
+         const vm = app.mount('#root');
+     </script>
+</body>
+
+</html>
