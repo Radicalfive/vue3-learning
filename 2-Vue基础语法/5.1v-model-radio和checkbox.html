@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 复选框 -->
+        <h2>选择技术栈</h2>
+        <h3>你的选择是：{{checks}}</h3>
+        <label for="SpringBoot">
+        <input type="checkbox"
+        id="SpringBoot"
+        value="SpringBoot"
+        v-model="checks"/>
+        SpringBoot
+    </label>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        let app = Vue.createApp({
+            data() {
+                return {
+
+                };
+            },
+            created() {
+
+            },
+            mounted() {
+
+            },
+            methods: {
+
+            },
+        });
+        let vm = app.mount('#app');
+    </script>
+</body>
+
+<html>
