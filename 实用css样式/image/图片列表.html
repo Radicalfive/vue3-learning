@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>horizontal-scroll-snap</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        .horizontal-snap {
+            margin: 0 auto;
+            display: grid;
+            grid-auto-flow: column;
+            gap: 1rem;
+            height: calc(180px + 1rem);
+            padding: 1rem;
+            width: 85%;
+            margin: 0 auto;
+            border-radius: 5px;
+            background-color: #ccc;
+            overflow-y: auto;
+            overscroll-behavior-x: contain;
+            scroll-snap-type: x mandatory;
+        }
+
+        .horizontal-snap>a {
+            scroll-snap-align: center;
+        }
+
+        .horizontal-snap img {
+            width: 180px;
+            max-width: none;
+            object-fit: contain;
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="horizontal-snap">
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/11.jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/head-28.jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/head-200.jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/head-197.jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/head-196.jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/head-186.jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/18.jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/10.jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/14.jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/R-C%20(5).jpg" alt=""></a>
+        <a href="#"><img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/avatar-boy/R-C%20(4).jpg" alt=""></a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用vue实现过渡</title>
+    <style>
+        .guodu {
+            transition: 2s background-color ease;
+        }
+
+        .cheng {
+            background-color: orange;
+        }
+
+        .lv {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 使用transition和:class动态样式绑定实现过渡 -->
+        <button @click="handleClick1">切换</button>
+        <h2 :class="animate">hello world111</h2>
+        <hr />
+        <button @click="handleClick2">切换</button>
+        <h2 :style="styleObj" style="transition: 2s background-color ease;">hello world222</h2>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    animate: {
+                        guodu: true,
+                        cheng: true,
+                        lv: false
+                    },
+                    styleObj: {
+                        backgroundColor: "orange",
+                        // fontSize: "34px",
+                    }
+                }
+            },
+            methods: {
+                handleClick1() {
+                    this.animate.cheng = !this.animate.chen;
+                    this.animate.lv = !this.animate.lv
+                },
+                handleClick2() {
+                    if (this.styleObj.backgroundColor === "orange") {
+                        this.styleObj.backgroundColor = "green";
+                    } else {
+                        this.styleObj.backgroundColor = "orange";
+                    }
+                }
+            },
+        });
+        const vm = app.mount('#app');
+    </script>
+</body>
+
+<html>

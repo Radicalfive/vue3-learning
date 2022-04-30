@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg-line-text</title>
+    <style>
+        svg {
+            width: 1300px;
+            height: 300px;
+            margin: auto;
+        }
+
+        svg text {
+            text-transform: uppercase;
+            animation: stroke 5s infinite alternate;
+            letter-spacing: 10px;
+            font-size: 150px;
+        }
+
+        @keyframes stroke {
+            0% {
+                fill: rgba(72, 138, 20, 0);
+                stroke: #365fa0;
+                stroke-dashoffset: 25%;
+                stroke-dasharray: 0 50%;
+                stroke-width: 0.2;
+            }
+
+            50% {
+                fill: rgba(72, 138, 20, 0);
+                stroke: #365fa0;
+                stroke-width: 0.5;
+            }
+
+            70% {
+                fill: rgba(72, 138, 20, 0);
+                stroke: #365fa0;
+                stroke-width: 1;
+            }
+
+            90%,
+            100% {
+                fill: #488acc;
+                stroke: rgba(54, 95, 160, 0);
+                stroke-dashoffset: -25%;
+                stroke-dasharray: 50% 0;
+                stroke-width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg viewBox="0 0 400 200">
+        <text x="0" y="90%"> Radical </text>
+    </svg>
+    <svg viewBox="0 0 400 200">
+        <text x="0" y="90%"> mqxu </text>
+    </svg>
+</body>
+
+</html>

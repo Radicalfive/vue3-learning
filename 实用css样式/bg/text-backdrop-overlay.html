@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-backrop-overlay</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            position: relative;
+            width: 1200px;
+            height: 800px;
+            margin: auto;
+        }
+
+        .text-overlay {
+            position: absolute;
+            bottom: 20%;
+            left: 0;
+            right: 0;
+            height: 400px;
+            line-height: 400px;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 300;
+            color: white;
+            backdrop-filter: blur(14px) brightness(80%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-overlay">Hello ,World</div>
+    <img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/c5340e3e880811ebb6edd017c2d2eca2.jpg" alt="">
+
+</body>
+
+</html>

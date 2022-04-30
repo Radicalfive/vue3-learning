@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3快速起步</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>姓名：{{state.name}}</p>
+        <p>职业：{{state.work}}</p>
+        <p>年龄：{{state.age}}</p>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script>
+        const { createApp ,ref ,reactive } = Vue;
+        
+        const App = {
+            setup() {
+                const state = reactive({
+                    name: "张三",
+                    work: 'cv工程师',
+                    age: 34
+                });
+                setTimeout(()=>{
+                    state.name = 'radical'
+                },2000)
+                
+
+                return {
+                    state,
+                };
+            },
+        };
+        createApp(App).mount("#app")
+    </script>
+    
+</body>
+</html>

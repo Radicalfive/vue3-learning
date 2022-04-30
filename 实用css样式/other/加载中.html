@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donut-spinner</title>
+    <style>
+        @keyframes donut-spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .donut1 {
+            display: inline-block;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #28afea;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: donut-spin 1.2s linear infinite;
+        }
+
+        .donut2 {
+            display: inline-block;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #fec938;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: donut-spin 1.4s linear infinite;
+        }
+
+        .donut3 {
+            display: inline-block;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #1aa034;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: donut-spin 1.6s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="donut1"></div>
+    <div class="donut2"></div>
+    <div class="donut3"></div>
+</body>
+
+</html>

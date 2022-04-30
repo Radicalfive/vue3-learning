@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义组件嵌套</title>
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            width: 40%;
+            border-radius: 5px;
+            background-color: #bdc3c7;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            border-radius: 5px 5px 0 0;
+            width: 50px;
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        .bt {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <box></box>
+
+    </div>
+    <template id="box">
+        <div class="card">
+            <h2 class="bt">MYCards</h2>
+            <img src="../img/01.jpeg" alt="" style="width:100%" class="pic">
+            <box1></box1>
+        </div>
+    </template>
+
+    <template id="box1" class="container">
+        <div>
+            <h4>诗酒趁年华</h4>
+            <box2></box2>
+        </div>
+    </template>
+
+    <template id="box2">
+        <div>
+            <p>radical</p>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+            components: {
+                box: {
+                    template: '#box',
+                    components: {
+                        box1: {
+                            template: '#box1',
+                            components: {
+                                box2: {
+                                    template: '#box2'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        const vm = app.mount('#app');
+    </script>
+</body>
+
+<html>

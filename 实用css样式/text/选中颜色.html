@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom-text-selection</title>
+    <style>
+        ::selection {
+            background: #72c9ac;
+            color: black;
+        }
+
+        .custom-text-selection::selection {
+            background: #ff6c37;
+            color: white;
+        }
+
+        .unselectable {
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius suscipit quisquam quod. Ullam voluptate soluta ab
+        rerum quidem praesentium consectetur illum tempore perferendis. Deserunt, iste. Iusto vitae alias repellendus
+        beatae?</p>
+    <p class="custom-text-selection">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius suscipit quisquam
+        quod. Ullam voluptate soluta ab
+        rerum quidem praesentium consectetur illum tempore perferendis. Deserunt, iste. Iusto vitae alias repellendus
+        beatae?</p>
+    <p class="unselectable">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius suscipit quisquam quod. Ullam
+        voluptate soluta ab
+        rerum quidem praesentium consectetur illum tempore perferendis. Deserunt, iste. Iusto vitae alias repellendus
+        beatae?</p>
+
+</body>
+
+</html>

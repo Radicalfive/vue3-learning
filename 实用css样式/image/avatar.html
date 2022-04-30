@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fit-image-in-container</title>
+    <style>
+        .image {
+            background: #34495e;
+            border: 1px solid #34495e;
+            width: 200px;
+            height: 200px;
+        }
+
+        .image-contain {
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .image-cover {
+            object-fit: cover;
+            object-position: right top;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://cdn.jsdelivr.net/gh/Radicalfive/MK-image@master/09.6x5zl5on75o0.webp" class="image image-contain">
+    <img src="https://cdn.jsdelivr.net/gh/Radicalfive/MK-image@master/11.393k04oqu780.webp" class="image image-cover">
+</body>
+
+</html>

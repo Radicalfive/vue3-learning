@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover-shadow-box-animation</title>
+    <style>
+        .hover-shadow-box-animation {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            margin: 50px 40%;
+            background-color: #65bae2;
+            color: #333;
+            cursor: pointer;
+            transition-duration: 0.5s;
+            transition-property: box-shandow, transform;
+        }
+
+        .hover-shadow-box-animation:hover {
+            box-shadow: 1px 10px 10px -10px rgba(0, 0, 0, 0.5);
+            transform: scale(1.3);
+            background-color: #2689b7;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hover-shadow-box-animation">Box it!!</div>
+</body>
+
+</html>

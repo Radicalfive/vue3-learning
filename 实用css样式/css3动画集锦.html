@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <title>css动画集锦</title>
+    <style>
+        :root {
+            /* 总高为浏览器80%，每个div分别占三分之一的高度 */
+            --div-height: 80vh / 3;
+            --gap: 5px;
+            /* div的行高为上上面计算得到的自身高度，减去父容器padding、自身border的尺寸 */
+            --line-height: calc(var(--div-height) - var(--gap) * 4);
+            /* 定义一些颜色 */
+            --bg-color: #333;
+            --light-color: #f6f6f6;
+            --deep-blue-color: #225d85;
+            --blue-color: #65a1c9;
+        }
+
+        /* 定义所有动画的时长为0.5s，并做兼容性处理，溢出所有的内外边距（浏览器页面默认有内外边距） */
+        * {
+            margin: 0;
+            padding: 0;
+            /* 指定所有的动画的时长为0.5s */
+            /* Chorme Opera Safari内核 */
+            -webkit-transition: all 0.5s;
+            /* Firefox */
+            -moz-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        /* 背景斜纹渐变 */
+        body {
+            background-color: var(--bg-color);
+            background: repeating-linear-gradient(45deg,
+                    var(--light-color) 0,
+                    var(--light-color) 5%,
+                    #fff 0,
+                    #fff 50%) 0 / 200px 200px;
+        }
+
+        /* 父元素 */
+        #container {
+            width: 60vw;
+            height: 80vh;
+            margin: 10vh auto;
+            background-color: var(--deep-blue-color);
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            padding: var(--gap);
+        }
+
+        /* 子元素 */
+        #container div {
+            /* 固定占父元素的33%，水平垂直方向均不伸缩，可以改成 1 1  */
+            flex: 0 0 33.3%;
+            /* 行高和元素高度一样，可以实现垂直居中的效果， */
+            line-height: var(--line-height);
+            text-align: center;
+            color: var(--light-color);
+            background-color: var(--blue-color);
+            font-size: 1.8em;
+            box-sizing: border-box;
+            border: 5px var(--deep-blue-color) solid;
+            /* 指定所有的动画的时长为0.5s */
+            /* Chorme Opera Safari内核 */
+            -webkit-transition: all 0.5s;
+            /* Firefox */
+            -moz-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        /* 鼠标悬停手形状 */
+        #container div:hover {
+            cursor: pointer;
+        }
+
+        .move:hover {
+            /* 从其当前位置移动、离left top */
+            transform: translate(50px, 100px);
+        }
+
+        .fade:hover {
+            border: 0px;
+            opacity: 0.3;
+        }
+
+        /* 放大 */
+        .grow:hover {
+            /* X、Y轴分别放大1.2倍 */
+            -webkit-transform: scale(1.2, 1.2);
+            -moz-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+        }
+
+        /* 缩小 */
+        .shrink:hover {
+            /* X轴不变、Y轴减半 */
+            -webkit-transform: scale(1, 0.5);
+            -moz-transform: scale(1, 0.5);
+            transform: scale(1, 0.5);
+        }
+
+        /* 变形 */
+        .deform:hover {
+            /* 翻转给定的角度，根据给定的水平线（X轴）和垂直线（Y轴）参数 */
+            -webkit-transform: skew(30deg, 20deg);
+            -moz-transform: skew(30deg, 20deg);
+            transform: skew(30deg, 20deg);
+        }
+
+        /* 旋转 */
+        .rotate:hover {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        /* 脉冲 */
+        #container .pulse {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #container .pulse .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #f17c57fa;
+            /* 永远使用自定义的脉冲动画，每轮1s */
+            animation: pulse-animation 1s infinite;
+        }
+
+        /* 关键帧、阴影的变化 */
+        @keyframes pulse-animation {
+            0% {
+                box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+            }
+        }
+
+        /* 爱心动画 */
+        #heart {
+            color: red;
+            font-size: 50px;
+            animation: heart-pulse 0.9s infinite ease-out;
+        }
+
+        @keyframes heart-pulse {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            70% {
+                transform: scale(0.65);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="move">move</div>
+        <div class="fade">fade</div>
+        <div class="grow">grow</div>
+        <div class="shrink">shrink</div>
+        <div class="deform">deform</div>
+        <div class="rotate">rotate</div>
+        <div class="pulse">pulse
+            <div class="circle"></div>
+        </div>
+        <div>heart
+            <i class="fa fa-heart" id="heart"></i>
+        </div>
+    </div>
+</body>
+
+</html>

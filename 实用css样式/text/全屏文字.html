@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullscreen</title>
+    <style>
+        .container {
+            margin: 40px auto;
+            max-width: 700px;
+        }
+
+        .element {
+            padding: 20xp;
+            height: 300px;
+            width: 100%;
+            background-color: skyblue;
+            box-sizing: border-box;
+        }
+
+        .element p {
+            text-align: center;
+            color: #fff;
+            font-size: 3em;
+        }
+
+        .element:-ms-fullscreen p {
+            visibility: visible;
+        }
+
+        .element:fullscreen {
+            background-color: #e67905;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .animated-border-button {
+            background-color: #4d9fc8;
+            border: none;
+            color: #fff;
+            outline: none;
+            padding: 12px 40px 10px;
+            position: relative;
+        }
+
+        .animated-border-button:before,
+        .animated-border-button:after {
+            border: 0 solid transparent;
+            transition: all 0.3s;
+            content: '';
+            height: 0;
+            position: absolute;
+            width: 24px;
+        }
+
+        .animated-border-button:before {
+            border-top: 2px solid #1e84b7;
+            right: 0;
+            top: -4px;
+        }
+
+        .animated-border-button:after {
+            border-bottom: 2px solid #1e96d1;
+            bottom: -4px;
+            left: 0;
+        }
+
+        .animated-border-button:hover:before,
+        .animated-border-button:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p><em>. Nostrum, repellat quidem! Rem earum error
+                numquam nobis culpa facilis est saepe suscipit? Vel, deserunt! Architecto, rerum? Optio cupiditate
+                soluta libero? Saepe.</em></p>
+        <div class="element" id="element">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit</p>
+        </div>
+        <br>
+        <button class="animated-border-button"
+            onclick="var el = document.getElementById('element');el.requestFullscreen();">
+            Go Full Screen!
+        </button>
+    </div>
+</body>
+
+</html>

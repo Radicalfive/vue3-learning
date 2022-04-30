@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <title>前后端分离开发起步</title>
+</head>
+
+<body>
+    <div id="app">
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">菜单</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">Vue</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                </ul>
+            </div>
+            <div class="nav-content">
+                <ul class="tabs tabs-transparent">
+                    <li class="tab"><a href="#">首页</a></li>
+                    <li class="tab"><a href="#">搜索</a></li>
+                    <li class="tab disabled"><a href="">下载APP</a></li>
+                    <li class="tab"><a href="#">个人中心</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#">Java</a></li>
+            <li><a href="#">Vue</a></li>
+            <li><a href="#">JavaScript</a></li>
+        </ul>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4" v-for="(item,index) in list" :key="index">
+                    <div class="card">
+                        <div class="card-image">
+                            <img :src="item.thumbnail" height="400">
+                        </div>
+                        <hr>
+                        <span class="card-title">{{item.title}}</span>
+                        <div class="card-content">
+                            <p>{{item.content}}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">{{item.createTime}}</a>
+                            <br>
+                            <a href="#">作者:{{item.author}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                list: []
+            },
+            created() {
+                axios.get('http://localhost:8080/api/v1/articles/all')
+                    .then(res => {
+                        console.log(res.data.data);
+                        this.list = res.data.data;
+                    });
+            },
+        })
+    </script>
+</body>
+
+<html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用vue实现过渡</title>
+    <style>
+        @keyframes move {
+            0% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateY(50px);
+            }
+
+            75% {
+                transform: translateX(100px);
+            }
+
+            100% {
+                transform: translateY(0xp);
+            }
+        }
+
+        .donghua {
+            animation: move 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="handleClick">切换</button>
+        <h2 :class="obj">hello world</h2>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    obj: {
+                        donghua: false,
+                    }
+                }
+            },
+            methods: {
+                handleClick() {
+                    this.obj.donghua = !this.obj.donghua;
+                }
+            },
+        });
+        const vm = app.mount('#app');
+    </script>
+</body>
+
+<html>

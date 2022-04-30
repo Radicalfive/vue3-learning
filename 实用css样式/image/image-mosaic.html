@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image-mosaic</title>
+    <style>
+        .image-mosaic {
+            display: grid;
+            gap: 0.75rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-auto-rows: 240px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #353535;
+            font-size: 3rem;
+            color: #fff;
+            box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+                rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            transition: all 500ms;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 0;
+            margin: 0;
+        }
+
+        @media screen and (min-width:600px) {
+            .card-tall {
+                /* 跨行合并 */
+                grid-row: span 2 / auto;
+            }
+
+            .card-wide {
+                grid-column: span 2 / auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-mosaic">
+        <div class="card card-tall card-wide"
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/0432a40b6ab749f8ae473d5c7e9ce12a.jpg');">
+        </div>
+        <div class="card card-tall "
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/05efd2055b9c4c1bb9eb9d85d192c3f5.jpg');">
+        </div>
+        <div class="card"
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/08cb1986881b11ebb6edd017c2d2eca2.jpg');">
+        </div>
+        <div class="card"
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/0d5e523c25e347e98a14efe6211f7948.jpg');">
+        </div>
+        <div class="card" style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/18080.jpg');">
+        </div>
+        <div class="card card-wide"
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/14808575880811ebb6edd017c2d2eca2.jpg');">
+        </div>
+        <div class="card"
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/49f33642275045f0b614f6c35ac067cf.jpg');">
+        </div>
+        <div class="card" style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/14664.jpg');">
+        </div>
+        <div class="card"
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/1efbb55e880711ebb6edd017c2d2eca2.jpg');">
+        </div>
+        <div class="card card-wide"
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/7ec3bb7a44804ec28e47798bd6239487.jpg');">
+        </div>
+        <div class="card"
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/782c2eb50bbd4850b3cd316f4fa39e73.png');">
+        </div>
+        <div class="card"
+            style="background-image: url('https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/7eced59c3e7c426e8e3eb1ac1a320798.png');">
+        </div>
+    </div>
+
+</body>
+
+</html>

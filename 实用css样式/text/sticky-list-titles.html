@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sticky-list-titles</title>
+    <style>
+        .container {
+            display: grid;
+            place-items: center;
+            min-height: 400px;
+        }
+
+        .sticky-stack {
+            background-color: rgb(8, 152, 137);
+            color: #fff;
+            margin: 0;
+            height: 320px;
+            border-radius: 1rem;
+            overflow-y: auto;
+        }
+
+        .sticky-stack dt {
+            position: sticky;
+            top: 0;
+            font-weight: bold;
+            background: rgb(11, 75, 72);
+            color: #cfd8dc;
+            padding: 0.25rem 1rem;
+        }
+
+        .sticky-stack dd {
+            margin: 0;
+            padding: 0.75rem 1rem;
+        }
+
+        .sticky-stack dd+dt {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sticky-stack">
+            <dl>
+                <dt>A</dt>
+                <dd>Algeria</dd>
+                <dd>Apple</dd>
+
+                <dt>B</dt>
+                <dd>Benin</dd>
+                <dd>Botswana</dd>
+                <dd>Burkina Faso</dd>
+                <dd>Burundi</dd>
+
+                <dt>C</dt>
+                <dd>Code</dd>
+                <dd>Cameroon</dd>
+                <dd>Chad</dd>
+                <dd>Comoros</dd>
+                <dd>Congo</dd>
+                <dd>Central African Republic</dd>
+                <dd>Chat</dd>
+                <dd>Csgo</dd>
+
+                <dt>D</dt>
+                <dd>Div</dd>
+                <dd>Driver</dd>
+                <dd>Details</dd>
+
+                <dt>E</dt>
+                <dd>Embed</dd>
+                <dd>Egypt</dd>
+                <dd>Element</dd>
+                <dd>Ethiopia</dd>
+                <dd>Else</dd>
+            </dl>
+        </div>
+    </div>
+
+</body>
+
+</html>

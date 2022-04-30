@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover-additional-content</title>
+
+    <style>
+        .card {
+            width: 300px;
+            height: 280px;
+            padding: 0;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .card * {
+            transition: 0.3s ease all;
+        }
+
+        .card img {
+            margin: 0;
+            width: 300px;
+            height: 224px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card h3 {
+            margin: 0;
+            padding: 12px 12px 48px;
+            line-height: 32px;
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        .card .focus-content {
+            display: block;
+            padding: 8px 12px;
+        }
+
+        .card p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .card:hover img,
+        .card:focus-within img {
+            margin-top: -80px;
+        }
+
+        .card:hover h3,
+        .card:focus-within h3 {
+            padding: 8px 12px 0;
+        }
+
+        .card a {
+            color: rgb(7, 112, 187);
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/9bb505b3880511ebb6edd017c2d2eca2.png" alt="" />
+        <h3>Radical Five</h3>
+        <div class="focus-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi provident doloribus voluptas odio quis
+            </p>
+            <a href="#">Link to source</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/9ee4f8317a5f42a6808003ba5792eb26.jpg" alt="" />
+        <h3>Radical Five</h3>
+        <div class="focus-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi provident doloribus voluptas odio quis
+            </p>
+            <a href="#">Link to source</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/8c34eecc46d947daac65f872a8858f98.jpg" alt="" />
+        <h3>Radical Five</h3>
+        <div class="focus-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi provident doloribus voluptas odio quis
+            </p>
+            <a href="#">Link to source</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

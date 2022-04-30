@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border-inset-text</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: url("https://ossstored.oss-cn-shanghai.aliyuncs.com/bg/5b7047e5c5e945e282e7c61addce8412.jpg");
+        }
+
+        body>div {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: auto;
+        }
+
+        fieldset {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: -5px;
+            width: 120px;
+            height: 120px;
+            border-top: 10px solid #000;
+            box-sizing: border-box;
+        }
+
+        legend {
+            font-family: "Averia Serif Libre";
+            font-size: 24px;
+            line-height: 10px;
+            font-weight: bold;
+            margin: auto;
+            padding: 2px 10px;
+            box-sizing: border-box;
+        }
+
+        .g-triangle fieldset {
+            transform-origin: center 36%;
+        }
+
+        .g-triangle fieldset:nth-of-type(1) {
+            transform: rotate(120deg);
+        }
+
+        .g-triangle fieldset:nth-of-type(2) {
+            transform: rotate(240deg);
+        }
+
+        .g-triangle fieldset:nth-of-type(3) {
+            transform: rotate(360deg);
+        }
+
+        .g-pentagon fieldset {
+            border-top-color: deeppink;
+            transform-origin: center 71%;
+        }
+
+        .g-pentagon fieldset legend {
+            color: deeppink;
+        }
+
+        .g-pentagon fieldset:nth-of-type(1) {
+            transform: rotate(72deg);
+        }
+
+        .g-pentagon fieldset:nth-of-type(2) {
+            transform: rotate(144deg);
+        }
+
+        .g-pentagon fieldset:nth-of-type(3) {
+            transform: rotate(216deg);
+        }
+
+        .g-pentagon fieldset:nth-of-type(4) {
+            transform: rotate(288deg);
+        }
+
+        .g-hexagon fieldset {
+            border-top-color: #673AB7;
+            transform-origin: center 89%;
+        }
+
+        .g-hexagon fieldset legend {
+            color: #673AB7;
+        }
+
+        .g-hexagon fieldset:nth-of-type(1) {
+            transform: rotate(60deg);
+        }
+
+        .g-hexagon fieldset:nth-of-type(2) {
+            transform: rotate(120deg);
+        }
+
+        .g-hexagon fieldset:nth-of-type(3) {
+            transform: rotate(180deg);
+        }
+
+        .g-hexagon fieldset:nth-of-type(4) {
+            transform: rotate(240deg);
+        }
+
+        .g-hexagon fieldset:nth-of-type(5) {
+            transform: rotate(300deg);
+        }
+
+        .g-hexagon fieldset:nth-of-type(6) {
+            transform: rotate(360deg);
+        }
+
+        .g-octagon fieldset {
+            border-top-color: #ff5722;
+            transform-origin: center 123%;
+        }
+
+        .g-octagon fieldset legend {
+            color: #ff5722;
+        }
+
+        .g-octagon fieldset:nth-of-type(1) {
+            transform: rotate(45deg);
+        }
+
+        .g-octagon fieldset:nth-of-type(2) {
+            transform: rotate(90deg);
+        }
+
+        .g-octagon fieldset:nth-of-type(3) {
+            transform: rotate(135deg);
+        }
+
+        .g-octagon fieldset:nth-of-type(4) {
+            transform: rotate(180deg);
+        }
+
+        .g-octagon fieldset:nth-of-type(5) {
+            transform: rotate(225deg);
+        }
+
+        .g-octagon fieldset:nth-of-type(6) {
+            transform: rotate(270deg);
+        }
+
+        .g-octagon fieldset:nth-of-type(7) {
+            transform: rotate(315deg);
+        }
+
+        .g-octagon fieldset:nth-of-type(8) {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="g-triangle">
+        <fieldset>
+            <legend>One</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Two</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Three</legend>
+        </fieldset>
+    </div>
+    <div class="g-pentagon">
+        <fieldset>
+            <legend>One</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Two</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Three</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Four</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Five</legend>
+        </fieldset>
+    </div>
+    <div class="g-hexagon">
+        <fieldset>
+            <legend>One</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Two</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Three</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Four</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Five</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Six</legend>
+        </fieldset>
+    </div>
+    <div class="g-octagon">
+        <fieldset>
+            <legend>One</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Two</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Three</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Four</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Five</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Six</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Seven</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Eight</legend>
+        </fieldset>
+    </div>
+</body>
+
+</html>

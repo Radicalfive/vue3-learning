@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父组件向子组件通过props属性传递数据</title>
+</head>
+
+<body>
+    <div id="app">
+        <child-component :child-player="player" :child-message="message" />
+    </div>
+
+    <template id="ChildComponent">
+        <div>
+            <h2>{{childPlayer.name}} ---- {{childPlayer.age}}</h2>
+            <h2>{{childMessage}}</h2>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script>
+        const ChildComponent = {
+            template: '#ChildComponent',
+            props: ['childPlayer', 'childMessage']
+        }
+
+        const app = new Vue({
+            el: "#app",
+            data() {
+                return {
+                    player: {
+                        name: 'zhangsan',
+                        age: 20,
+                    },
+                    message: '父组件数据->子组件'
+                }
+            },
+            components: {
+                ChildComponent
+            },
+        });
+    </script>
+</body>
+
+<html>

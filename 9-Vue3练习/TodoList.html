@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css " />
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-plus/dist/index.full.js "></script>
+    <title>简易版Vue3 TodoList</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        hr {
+            border: 1px dashed #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h2>使用Vue3和Element Plus 实现的简易版 TodoList</h2>
+            <el-input v-model="inputValue" placeholder="请输入待办事项" style="width: 380px; margin-right: 10px;"></el-input>
+            <el-button type="primary" @click="handleClick">新增</el-button>
+            <hr>
+            <el-table :data="list" border style="width: 450px;" @selection-change="handleSelectionChange">
+                <el-table-column type="selection" width="50"></el-table-column>
+                <el-table-column prop="content" label="待办事项" width="400"></el-table-column>
+            </el-table>
+            <div style="margin-top: 20px;">
+                <el-button type="danger" @click="deleteSelectedItem">删除</el-button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 文本框
+        const userInputEffect = () => {
+            const { ref } = Vue
+            const inputValue = ref("")
+            const handleInputChange = (newValue) => {
+                inputValue.value = newValue; // newValue就是用户输入的值
+            }
+            return {
+                inputValue,
+                handleInputChange
+            }
+        }
+
+        // 待办事项列表相关逻辑
+        const userListEffect = () => {
+            let itemId = 0;
+            const { reactive, toRefs } = Vue;
+            let listObj = reactive({ list: [] }); // 用来存所有的待办事项
+            let { list } = toRefs(listObj);
+            let multipleSelection = reactive([]); // 存选中的待办事项
+            const handelAddItem = (item) => {
+                if (item.value.length === 0) {
+                    alert("未添加任何待办事项");
+                    return;
+                }
+                listObj.list.push({
+                    id: ++itemId,
+                    content: item.value
+                }); // 向列表中加入待办事项
+                item.value = ""; // 清空文本框的值
+            };
+
+            // 处理复选框被选中事件
+            // val 为 选中的复选框 [{id:2,content:"2",row_index:1},{id:3, content:"3", row_index:2}]
+            const handleSelectionChange = (val) => {
+                multipleSelection = val;
+            };
+
+            // 删除选中的待办事项
+            const deleteSelectedItem = () => {
+                let list = listObj.list;
+                if (multipleSelection.length === 0) {
+                    alert("未选择任何待办事项");
+                    return;
+                }
+                multipleSelection.forEach((selectedItem) => {
+                    list = list.filter((listItem) => { listItem.id != selectedItem.id });  // 删除其中一项
+                });
+                listObj.list = list;
+            }
+            return {
+                list,
+                handelAddItem,
+                handleSelectionChange,
+                deleteSelectedItem
+            }
+        }
+
+        // App相关逻辑
+        const App = Vue.createApp({
+            // setup函数只做流程中转，引用定义好的数据和函数，并导出给模板使用
+            setup() {
+                const { inputValue, handleInputChange } = userInputEffect()
+                const { list, handelAddItem, handleSelectionChange, deleteSelectedItem } = userListEffect()
+
+                const handleClick = () => {
+                    handelAddItem(inputValue)
+                }
+
+                return {
+                    inputValue,
+                    list,
+                    handleInputChange,
+                    handleClick,
+                    handelAddItem,
+                    deleteSelectedItem,
+                    handleClick,
+                    handleSelectionChange,
+                };
+            },
+        })
+        App.use(ElementPlus)
+        const vm = App.mount('#app');
+    </script>
+</body>
+
+<html>

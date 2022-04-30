@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>floating-list-titles</title>
+    <style>
+        .container {
+            display: grid;
+            place-items: center;
+            min-height: 400px;
+        }
+
+        .floating-stack {
+            background: #a0d4ec;
+            color: fff;
+            height: 80vh;
+            width: 320px;
+            border-radius: 1rem;
+            overflow-y: atuo;
+        }
+
+        .floating-stack>dl {
+            margin: 0 0 1rem;
+            display: grid;
+            grid-template-columns: 2.5rem 1fr;
+            align-items: center;
+        }
+
+        .floating-stack dt {
+            position: sticky;
+            top: 0.5rem;
+            left: 0.5rem;
+            font-weight: bold;
+            background: #375d6f;
+            color: #cfd8dc;
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            padding: 0.25rem 1rem;
+            grid-column: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .floating-stack dd {
+            grid-column: 2;
+            margin: 0;
+            padding: 0.25rem;
+        }
+
+        .floating-stack>dl:first-of-type>dd:first-of-type {
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="floating-stack">
+            <dl>
+                <dt>A</dt>
+                <dd>Algeria</dd>
+                <dd>Apple</dd>
+
+                <dt>B</dt>
+                <dd>Benin</dd>
+                <dd>Botswana</dd>
+                <dd>Burkina Faso</dd>
+                <dd>Burundi</dd>
+
+                <dt>C</dt>
+                <dd>Code</dd>
+                <dd>Cameroon</dd>
+                <dd>Chad</dd>
+                <dd>Comoros</dd>
+                <dd>Congo</dd>
+                <dd>Central African Republic</dd>
+                <dd>Chat</dd>
+                <dd>Csgo</dd>
+
+                <dt>D</dt>
+                <dd>Div</dd>
+                <dd>Driver</dd>
+                <dd>Details</dd>
+
+                <dt>E</dt>
+                <dd>Embed</dd>
+                <dd>Egypt</dd>
+                <dd>Element</dd>
+                <dd>Ethiopia</dd>
+                <dd>Else</dd>
+            </dl>
+        </div>
+    </div>
+
+</body>
+
+</html>
